@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:37:36 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/02/09 15:18:25 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/02/09 21:14:57 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,5 @@ int	main(int argc, char **argv)
 	filling_stack(a, b, argc, argv);
 	print_all_stacks(a, b);
 	success_exit(a, b);
-	// if (!check_overflow(argv[1]))
-	// {
-	// 	printf("overflow\n");
-	// }
 }
+          
