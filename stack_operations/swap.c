@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 20:16:08 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/02/07 20:06:37 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/11 20:39:09 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,42 +14,59 @@
 
 static void	swap(t_stack *stack)
 {
-	int	tmp_data;
-	int	top_id;
+	t_stack_elem	*new_top;
 
-	top_id = stack->top_id;
-	if (top_id > 0)
+	if (stack->top->next == stack->bot)
 	{
-		tmp_data = stack->array[top_id];
-		stack->array[top_id] = stack->array[top_id - 1];
-		stack->array[top_id - 1] = tmp_data;
+		new_top = stack->bot;
+		new_top->next = stack->top;
+		new_top->prev = NULL;
+		stack->top->prev = new_top;
+		stack->top->next = NULL;
+		stack->bot = stack->top;
+		stack->top = new_top;
 	}
+	else
+	{
+		new_top = stack->top->next;
+		stack->top->next = new_top->next;
+		stack->top->prev = new_top;
+		new_top->next = stack->top;
+		new_top->prev = NULL;
+		stack->top = new_top;
+	}	
 }
 
 void	swap_a(t_stack *a)
 {
-	if (a->top_id > 0)
-	{
-		swap(a);
-		ft_putendl_fd("sa", 1);
-	}
+	if (a->top)
+		if (a->top->next)
+		{
+			swap(a);
+			ft_putendl_fd("sa", 1);
+		}
 }
 
 void	swap_b(t_stack *b)
 {
-	if (b->top_id > 0)
-	{
-		swap(b);
-		ft_putendl_fd("sb", 1);
-	}
+	if (b->top)
+		if (b->top->next)
+		{
+			swap(b);
+			ft_putendl_fd("sb", 1);
+		}
 }
 
 void	swap_a_b(t_stack *a, t_stack *b)
 {
-	if (a->top_id > 0 || b->top_id > 0)
+	if (a->top || b->top)
 	{
-		swap(a);
-		swap(b);
+		if (a->top)
+			if (a->top->next)
+				swap(a);
+		if (b->top)
+			if (b->top->next)
+				swap(b);
 		ft_putendl_fd("ss", 1);
 	}
 }
