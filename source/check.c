@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/09 16:10:52 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/02/09 17:34:10 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/19 19:50:50 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,10 @@ int	are_unique(int size, int *nums)
 		while (j < size)
 		{
 			if (nums[i] == nums[j])
+			{
+				free(nums);
 				return (0);
+			}
 			++j;
 		}
 		++i;
@@ -93,7 +96,6 @@ int	is_sorted(int size, int *nums)
 	{
 		if (nums[i] > nums[i + 1])
 		{
-			free(nums);
 			return (0);
 		}
 		++i;

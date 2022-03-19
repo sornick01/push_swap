@@ -6,33 +6,46 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:22:13 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/02/07 20:00:41 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/19 19:24:21 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/stack.h"
 
+// static void	rotate(t_stack *stack)
+// {
+// 	int	tmp;
+// 	int	i;
+
+// 	i = stack->top_id;
+// 	if (i > 0)
+// 	{
+// 		tmp = stack->array[i];
+// 		while (i > 0)
+// 		{
+// 			stack->array[i] = stack->array[i - 1];
+// 			--i;
+// 		}
+// 		stack->array[i] = tmp;
+// 	}
+// }
+
 static void	rotate(t_stack *stack)
 {
-	int	tmp;
-	int	i;
-
-	i = stack->top_id;
-	if (i > 0)
-	{
-		tmp = stack->array[i];
-		while (i > 0)
-		{
-			stack->array[i] = stack->array[i - 1];
-			--i;
-		}
-		stack->array[i] = tmp;
-	}
+	t_stack_elem	*tmp;
+	
+	tmp = stack->top;
+	stack->top = stack->top->next;
+	stack->top->prev = NULL;
+	tmp->next = NULL;
+	tmp->prev = stack->bot;
+	stack->bot->next = tmp;
+	stack->bot = tmp; 
 }
 
 void	rotate_a(t_stack *a)
 {
-	if (a->top_id > 0)
+	if (a->top && a->top->next)
 	{
 		rotate(a);
 		ft_putendl_fd("ra", 1);
@@ -41,7 +54,7 @@ void	rotate_a(t_stack *a)
 
 void	rotate_b(t_stack *b)
 {
-	if (b->top_id > 0)
+	if (b->top && b->top->next > 0)
 	{
 		rotate(b);
 		ft_putendl_fd("rb", 1);
@@ -50,10 +63,16 @@ void	rotate_b(t_stack *b)
 
 void	rotate_a_b(t_stack *a, t_stack *b)
 {
-	if (a->top_id > 0 || b->top_id > 0)
+	if (a->top || b->top)
 	{
-		rotate(a);
-		rotate(b);
+		if (a->top && a->top->next)
+		{
+			rotate(a);
+		}
+		if (b->top && b->top->next)
+		{
+			rotate(b);
+		}
 		ft_putendl_fd("rr", 1);
 	}
 }

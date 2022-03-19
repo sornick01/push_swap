@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 19:58:03 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/11 16:57:02 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/19 19:49:12 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,17 +37,21 @@ void	filling_stack(t_stack *a, t_stack *b, int argc, char **argv)
 	if (!are_numbers(argc, argv))
 		fail_exit(a, b);
 	nums = atoi_to_all(argc, argv);
-	size = argc - 1;
 	if (!nums)
 		fail_exit(a, b);
+
+	size = argc - 1;
 	if (!are_unique(size, nums))
 		fail_exit(a, b);
 	if (is_sorted(size, nums))
 		success_exit(a, b);
+
 	--size;
 	while (size >= 0)
 	{
 		push_value(a, nums[size]);
 		--size;
 	}
+
+	free(nums);	
 }
