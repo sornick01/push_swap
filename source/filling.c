@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 19:58:03 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/19 19:49:12 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/20 18:46:56 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ int	*atoi_to_all(int argc, char **argv)
 	return (nums);
 }
 
+// void	filling_array()
+
 void	filling_stack(t_stack *a, t_stack *b, int argc, char **argv)
 {
 	int	size;
@@ -45,7 +47,7 @@ void	filling_stack(t_stack *a, t_stack *b, int argc, char **argv)
 		fail_exit(a, b);
 	if (is_sorted(size, nums))
 		success_exit(a, b);
-
+	
 	--size;
 	while (size >= 0)
 	{

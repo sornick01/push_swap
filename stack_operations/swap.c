@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 20:16:08 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/19 19:04:16 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/20 18:50:43 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,34 +47,52 @@ static void	swap(t_stack *stack)
 	stack->top->next->data = tmp;
 }
 
-void	swap_a(t_stack *a)
+// void	swap_a(t_stack *a)
+// {
+// 	if (a->top && a->top->next)
+// 	{
+// 		swap(a);
+// 		ft_putendl_fd("sa", 1);
+// 	}
+// }
+
+void	swap_a(t_two_stacks *stacks)
 {
-	if (a->top && a->top->next)
+	if (stacks->a->top && stacks->a->top->next)
 	{
-		swap(a);
+		swap(stacks->a);
 		ft_putendl_fd("sa", 1);
 	}
 }
 
-void	swap_b(t_stack *b)
+// void	swap_b(t_stack *b)
+// {
+// 	if (b->top && b->top->next)
+// 	{
+// 		swap(b);
+// 		ft_putendl_fd("sb", 1);
+// 	}
+// }
+
+void	swap_b(t_two_stacks *stacks)
 {
-	if (b->top && b->top->next)
+	if (stacks->b->top && stacks->b->top->next)
 	{
-		swap(b);
+		swap(stacks->b);
 		ft_putendl_fd("sb", 1);
 	}
 }
 
-void	swap_a_b(t_stack *a, t_stack *b)
+void	swap_a_b(t_two_stacks *stacks)
 {
-	if (a->top || b->top)
+	if (stacks->a->top || stacks->b->top)
 	{
-		if (a->top)
-			if (a->top->next)
-				swap(a);
-		if (b->top)
-			if (b->top->next)
-				swap(b);
+		if (stacks->a->top)
+			if (stacks->a->top->next)
+				swap(stacks->a);
+		if (stacks->b->top)
+			if (stacks->b->top->next)
+				swap(stacks->b);
 		ft_putendl_fd("ss", 1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 19:43:38 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/11 16:54:46 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/20 18:57:02 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include "../includes/stack.h"
 # include "../libft/libft.h"
+
+
+
 
 void	success_exit(t_stack *a, t_stack *b);
 void	fail_exit(t_stack *a, t_stack *b);
@@ -25,5 +28,7 @@ int		are_unique(int size, int *nums);
 int		is_sorted(int size, int *nums);
 
 void	filling_stack(t_stack *a, t_stack *b, int argc, char **argv);
+
+void	quick_sort(int *arr, int left, int right);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 20:08:10 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/19 19:40:07 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/20 18:53:25 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,20 +56,38 @@ static void	push_elem(t_stack *dest , t_stack *source)
 	}
 }
 
-void	push_a(t_stack *a, t_stack *b)
+// void	push_a(t_stack *a, t_stack *b)
+// {
+// 	if (b->top)
+// 	{
+// 		push_elem(a, b);
+// 		ft_putendl_fd("pa", 1);
+// 	}
+// }
+
+void	push_a(t_two_stacks *stacks)
 {
-	if (b->top)
+	if (stacks->b->top)
 	{
-		push_elem(a, b);
+		push_elem(stacks->a, stacks->b);
 		ft_putendl_fd("pa", 1);
 	}
 }
 
-void	push_b(t_stack *a, t_stack *b)
+// void	push_b(t_stack *a, t_stack *b)
+// {
+// 	if (a->top)
+// 	{
+// 		push_elem(b, a);
+// 		ft_putendl_fd("pb", 1);
+// 	}
+// }
+
+void	push_b(t_two_stacks *stacks)
 {
-	if (a->top)
+	if (stacks->a->top)
 	{
-		push_elem(b, a);
+		push_elem(stacks->b, stacks->a);
 		ft_putendl_fd("pb", 1);
 	}
 }
