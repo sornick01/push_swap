@@ -6,46 +6,46 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 20:16:08 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/20 18:50:43 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/21 18:31:49 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/stack.h"
 
-// static void	swap(t_stack *stack)
-// {
-// 	t_stack_elem	*new_top;
-
-// 	if (stack->top->next == stack->bot)
-// 	{
-// 		new_top = stack->bot;
-// 		new_top->next = stack->top;
-// 		new_top->prev = NULL;
-// 		stack->top->prev = new_top;
-// 		stack->top->next = NULL;
-// 		stack->bot = stack->top;
-// 		stack->top = new_top;
-// 	}
-// 	else
-// 	{
-// 		new_top = stack->top->next;
-// 		stack->top->next = new_top->next;
-// 		stack->top->prev = new_top;
-// 		new_top->next = stack->top;
-// 		new_top->prev = NULL;
-// 		stack->top = new_top;
-// 	}
-// }
-
 static void	swap(t_stack *stack)
 {
 	t_stack_elem	*new_top;
-	int				tmp;
 
-	tmp = stack->top->data;
-	stack->top->data = stack->top->next->data;
-	stack->top->next->data = tmp;
+	if (stack->top->next == stack->bot)
+	{
+		new_top = stack->bot;
+		new_top->next = stack->top;
+		new_top->prev = NULL;
+		stack->top->prev = new_top;
+		stack->top->next = NULL;
+		stack->bot = stack->top;
+		stack->top = new_top;
+	}
+	else
+	{
+		new_top = stack->top->next;
+		stack->top->next = new_top->next;
+		stack->top->prev = new_top;
+		new_top->next = stack->top;
+		new_top->prev = NULL;
+		stack->top = new_top;
+	}
 }
+
+// static void	swap(t_stack *stack)
+// {
+// 	t_stack_elem	*new_top;
+// 	int				tmp;
+
+// 	tmp = stack->top->data;
+// 	stack->top->data = stack->top->next->data;
+// 	stack->top->next->data = tmp;
+// }
 
 // void	swap_a(t_stack *a)
 // {

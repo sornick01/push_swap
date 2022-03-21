@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:22:13 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/19 19:24:21 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/21 17:16:00 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,35 +43,69 @@ static void	rotate(t_stack *stack)
 	stack->bot = tmp; 
 }
 
-void	rotate_a(t_stack *a)
+// void	rotate_a(t_stack *a)
+// {
+// 	if (a->top && a->top->next)
+// 	{
+// 		rotate(a);
+// 		ft_putendl_fd("ra", 1);
+// 	}
+// }
+
+void	rotate_a(t_two_stacks *stacks)
 {
-	if (a->top && a->top->next)
+	if (stacks->a->top && stacks->a->top->next)
 	{
-		rotate(a);
+		rotate(stacks->a);
 		ft_putendl_fd("ra", 1);
 	}
 }
 
-void	rotate_b(t_stack *b)
+// void	rotate_b(t_stack *b)
+// {
+// 	if (b->top && b->top->next > 0)
+// 	{
+// 		rotate(b);
+// 		ft_putendl_fd("rb", 1);
+// 	}
+// }
+
+void	rotate_b(t_two_stacks *stacks)
 {
-	if (b->top && b->top->next > 0)
+	if (stacks->b->top && stacks->b->top->next > 0)
 	{
-		rotate(b);
+		rotate(stacks->b);
 		ft_putendl_fd("rb", 1);
 	}
 }
 
-void	rotate_a_b(t_stack *a, t_stack *b)
+// void	rotate_a_b(t_stack *a, t_stack *b)
+// {
+// 	if (a->top || b->top)
+// 	{
+// 		if (a->top && a->top->next)
+// 		{
+// 			rotate(a);
+// 		}
+// 		if (b->top && b->top->next)
+// 		{
+// 			rotate(b);
+// 		}
+// 		ft_putendl_fd("rr", 1);
+// 	}
+// }
+
+void	rotate_a_b(t_two_stacks *stacks)
 {
-	if (a->top || b->top)
+	if (stacks->a->top || stacks->b->top)
 	{
-		if (a->top && a->top->next)
+		if (stacks->a->top && stacks->a->top->next)
 		{
-			rotate(a);
+			rotate(stacks->a);
 		}
-		if (b->top && b->top->next)
+		if (stacks->b->top && stacks->b->top->next)
 		{
-			rotate(b);
+			rotate(stacks->b);
 		}
 		ft_putendl_fd("rr", 1);
 	}

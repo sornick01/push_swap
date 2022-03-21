@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 17:26:29 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/19 19:29:49 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/21 17:17:43 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,35 +25,35 @@ static void	reverse_rotate(t_stack *stack)
 	stack->top = tmp;
 }
 
-void	reverse_rotate_a(t_stack *a)
+void	reverse_rotate_a(t_two_stacks *stacks)
 {
-	if (a->top && a->top->next)
+	if (stacks->a->top && stacks->a->top->next)
 	{
-		reverse_rotate(a);
+		reverse_rotate(stacks->a);
 		ft_putendl_fd("rra", 1);
 	}
 }
 
-void	reverse_rotate_b(t_stack *b)
+void	reverse_rotate_b(t_two_stacks *stacks)
 {
-	if (b->top && b->top->next)
+	if (stacks->b->top && stacks->b->top->next)
 	{
-		reverse_rotate(b);
+		reverse_rotate(stacks->b);
 		ft_putendl_fd("rrb", 1);
 	}
 }
 
-void	reverse_rotate_a_b(t_stack *a, t_stack *b)
+void	reverse_rotate_a_b(t_two_stacks *stacks)
 {
-	if (a->top || b->top)
+	if (stacks->a->top || stacks->b->top)
 	{
-		if (a->top && a->top->next)
+		if (stacks->a->top && stacks->a->top->next)
 		{
-			reverse_rotate(a);
+			reverse_rotate(stacks->a);
 		}
-		if (b->top && b->top->next)
+		if (stacks->b->top && stacks->b->top->next)
 		{
-			reverse_rotate(b);
+			reverse_rotate(stacks->b);
 		}
 		ft_putendl_fd("rrr", 1);
 	}

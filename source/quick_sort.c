@@ -9,24 +9,24 @@ static void	swap(int *a, int *b)
 
 static int	partition(int *arr, int left, int right)
 {
-	int mid = (left + right) / 2;
-	int i = left;
-	int j = right;
-	while (i <= j)
-	{
-		while (arr[i] < arr[mid])
-		{
-			++i;
-		}
-		while (arr[j] > arr[mid])
-		{
-			--j;
-		}
-		if (i >= j)
-			break;
-		swap(&arr[i++], &arr[j--]);
-	}
-	return j;
+	int mid = arr[(left + right) / 2];
+    int i = left;
+    int j = right;
+    while (i <= j)
+    {
+        while (arr[i] < mid)
+        {
+            ++i;
+        }
+        while (arr[j] > mid)
+        {
+            --j;
+        }
+        if (i >= j)
+            break;
+        swap(&arr[i++], &arr[j--]);
+    }
+    return j;
 }
 
 void	quick_sort(int *arr, int left, int right)

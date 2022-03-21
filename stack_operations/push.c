@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 20:08:10 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/20 18:53:25 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/21 18:39:52 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int	push_value(t_stack *stack, int data)
 		new->next = (stack)->top;
 		(stack)->top = new;
 	}
+	stack->stack_size++;
 	return(1);
 }
 
@@ -54,6 +55,8 @@ static void	push_elem(t_stack *dest , t_stack *source)
 		dest->top->prev = tmp;
 		dest->top = tmp;
 	}
+	dest->stack_size++;
+	source->stack_size--;
 }
 
 // void	push_a(t_stack *a, t_stack *b)

@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/03 17:06:52 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/20 18:53:53 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/21 18:21:32 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 typedef struct s_stack_elem
 {
-
 	int 				data;
 	int					order;
 	int					flag;
@@ -33,12 +32,12 @@ typedef struct s_stack
 
 	t_stack_elem	*top;
 	t_stack_elem	*bot;
-
+	int				stack_size;
 }	t_stack;
 
 typedef struct s_two_stacks
 {
-    
+    int		arr_size;
     int     *sorted_array;
     t_stack *a;
     t_stack *b;
@@ -59,12 +58,12 @@ static void		push_elem(t_stack *dest , t_stack *source);
 void			push_a(t_two_stacks *stacks);
 void			push_b(t_two_stacks *stacks);
 
-void			rotate_a(t_stack *a);
-void			rotate_b(t_stack *b);
-void			rotate_a_b(t_stack *a, t_stack *b);
+void			rotate_a(t_two_stacks *stacks);
+void			rotate_b(t_two_stacks *stacks);
+void			rotate_a_b(t_two_stacks *stacks);
 
-void			reverse_rotate_a(t_stack *a);
-void			reverse_rotate_b(t_stack *b);
-void			reverse_rotate_a_b(t_stack *a, t_stack *b);
+void			reverse_rotate_a(t_two_stacks *stacks);
+void			reverse_rotate_b(t_two_stacks *stacks);
+void			reverse_rotate_a_b(t_two_stacks *stacks);
 
 #endif

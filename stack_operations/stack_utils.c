@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 18:31:39 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/11 16:02:19 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/21 18:36:00 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_stack	*create_stack()
 	new_stack = (t_stack *)malloc(sizeof(t_stack_elem));
 	if (!new_stack)
 		return (NULL);
+	new_stack->stack_size = 0;
 	new_stack->bot = NULL;
 	new_stack->top = NULL;
 	return (new_stack);
