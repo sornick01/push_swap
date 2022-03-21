@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:37:36 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/21 20:28:15 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/21 20:52:55 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,17 +73,18 @@ int	main(int argc, char **argv)
 	stacks->a = create_stack();
 	stacks->b = create_stack();
 	filling_stack(stacks, argc, argv);
-	print_with_size(stacks);
+	// print_with_size(stacks);
 	// push_b(stacks);
 	// push_b(stacks);
 	// push_b(stacks);
 	// push_b(stacks);
-	for (size_t i = 0; i < stacks->arr_size; i++)
-	{
-		printf("%d", stacks->sorted_array[i]);
-	}
+	// for (size_t i = 0; i < stacks->arr_size; i++)
+	// {
+	// 	printf("%d", stacks->sorted_array[i]);
+	// }
+	// printf("huy %d\n", upper_than_middle(stacks->a, stacks->a->stack_size, 40));
 	start_sorting(stacks);
-	print_with_size(stacks);
+	// print_with_size(stacks);
 	
 	// print_all_stacks(stacks->a, stacks->b);
 	// push_b(stacks);

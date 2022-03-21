@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 19:43:38 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/21 19:20:31 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/21 20:44:34 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void	quick_sort(int *arr, int left, int right);
 void	big_sort_back(t_two_stacks *stacks);
 void	big_sort(t_two_stacks *stacks, int var);
 void	start_sorting(t_two_stacks *stacks);
+int	upper_than_middle(t_stack *stack, int size, int order);
 
 #endif

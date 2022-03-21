@@ -6,10 +6,14 @@ int	upper_than_middle(t_stack *stack, int size, int order)
 	t_stack_elem	*tmp;
 
 	i = 0;
-	while (tmp && tmp->order != order)
+	tmp = stack->top;
+	if (tmp)
 	{
-		tmp = tmp->next;
-		++i;
+		while (tmp && tmp->order != order)
+		{
+			tmp = tmp->next;
+			++i;
+		}
 	}
 	if (i >= size / 2)
 		return (1);
@@ -74,7 +78,7 @@ void	big_sort_back(t_two_stacks *stacks)
 	{
 		max = maximum(stacks->b);
 		check = upper_than_middle(stacks->b, stacks->b->stack_size, max);
-		while (stacks->b->top->order)
+		while (stacks->b->top->order != max)
 		{
 			if (!check)
 				rotate_b(stacks);
