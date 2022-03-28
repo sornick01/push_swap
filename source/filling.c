@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 19:58:03 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/21 20:27:21 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/28 21:28:44 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ static void	fill_order(t_two_stacks *stacks)
 	int				i;
 
 	tmp = stacks->a->top;
-	// i = stacks->arr_size;
 	while(tmp)
 	{
 		i = 0;

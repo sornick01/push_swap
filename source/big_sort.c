@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   big_sort.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 21:28:52 by mpeanuts          #+#    #+#             */
+/*   Updated: 2022/03/28 21:28:53 by mpeanuts         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 int	upper_than_middle(t_stack *stack, int size, int order)
@@ -35,14 +47,6 @@ int	maximum(t_stack *stack)
 		tmp = tmp->next;
 	}
 	return (max);
-}
-
-void	start_sorting(t_two_stacks *stacks)
-{
-	if (stacks->a->stack_size <= 100)
-		big_sort(stacks, 15);
-	else
-		big_sort(stacks, 30);
 }
 
 void	big_sort(t_two_stacks *stacks, int var)
