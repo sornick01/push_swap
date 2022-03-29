@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:22:13 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/21 17:16:00 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:09:30 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,14 @@
 static void	rotate(t_stack *stack)
 {
 	t_stack_elem	*tmp;
-	
+
 	tmp = stack->top;
 	stack->top = stack->top->next;
 	stack->top->prev = NULL;
 	tmp->next = NULL;
 	tmp->prev = stack->bot;
 	stack->bot->next = tmp;
-	stack->bot = tmp; 
+	stack->bot = tmp;
 }
 
 // void	rotate_a(t_stack *a)

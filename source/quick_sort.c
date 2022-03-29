@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 21:28:23 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/28 21:49:52 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:04:17 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ static int	partition(int *arr, int left, int right)
 			--j;
 		}
 		if (i >= j)
-			break;
+			break ;
 		swap(&arr[i++], &arr[j--]);
 	}
-	return j;
+	return (j);
 }
 
 void	quick_sort(int *arr, int left, int right)

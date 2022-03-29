@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push.c                                             :+:      :+:    :+:   */
+/*   push_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/06 20:08:10 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/29 19:05:50 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:10:56 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/stack.h"
+#include "../bonus_includes/stack_bonus.h"
 
 int	push_value(t_stack *stack, int data)
 {
@@ -73,7 +73,6 @@ void	push_a(t_two_stacks *stacks)
 	if (stacks->b->top)
 	{
 		push_elem(stacks->a, stacks->b);
-		ft_putendl_fd("pa", 1);
 	}
 }
 
@@ -91,6 +90,5 @@ void	push_b(t_two_stacks *stacks)
 	if (stacks->a->top)
 	{
 		push_elem(stacks->b, stacks->a);
-		ft_putendl_fd("pb", 1);
 	}
 }

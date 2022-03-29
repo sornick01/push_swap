@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   start_sorting.c                                    :+:      :+:    :+:   */
+/*   ft_isdigit_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/28 21:28:31 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/29 19:04:25 by mpeanuts         ###   ########.fr       */
+/*   Created: 2022/03/28 21:28:03 by mpeanuts          #+#    #+#             */
+/*   Updated: 2022/03/29 18:33:58 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../bonus_includes/push_swap_bonus.h"
 
-void	start_sorting(t_two_stacks *stacks)
+int	ft_isdigit(int c)
 {
-	if (stacks->a->stack_size == 2)
-		sort_two(stacks);
-	else if (stacks->a->stack_size == 3)
-		sort_three(stacks);
-	else if (stacks->a->stack_size == 5)
-		sort_five(stacks);
-	else if (stacks->a->stack_size <= 100)
-		big_sort(stacks, 15);
-	else
-		big_sort(stacks, 30);
+	if (c >= 48 && c <= 57)
+		return (1);
+	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 15:37:36 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/28 21:19:46 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/29 18:48:35 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,5 @@ int	main(int argc, char **argv)
 	stacks->b = create_stack();
 	filling_stack(stacks, argc, argv);
 	start_sorting(stacks);
-	success_exit(stacks->a, stacks->b);
+	success_exit(stacks);
 }

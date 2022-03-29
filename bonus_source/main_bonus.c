@@ -6,11 +6,27 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 21:36:58 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/28 22:14:36 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:00:27 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../bonus_includes/push_swap_bonus.h"
+
+int	check_sorted(t_two_stacks *stacks)
+{
+	t_stack_elem	*tmp;
+
+	if (stacks->b->top)
+		return (0);
+	tmp = stacks->a->top;
+	while (tmp->next)
+	{
+		if (tmp->data > tmp->next->data)
+			return (0);
+		tmp = tmp->next;
+	}
+	return (1);
+}
 
 int	main(int argc, char **argv)
 {
@@ -22,4 +38,10 @@ int	main(int argc, char **argv)
 	stacks->a = create_stack();
 	stacks->b = create_stack();
 	filling_stack(stacks, argc, argv);
+	get_commands(stacks);
+	if (check_sorted(stacks))
+		ft_putendl_fd("OK", 1);
+	else
+		ft_putendl_fd("KO", 1);
+	success_exit(stacks);
 }

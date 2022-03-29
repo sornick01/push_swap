@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   filling.c                                          :+:      :+:    :+:   */
+/*   filling_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 19:58:03 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/29 19:03:04 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:00:01 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../bonus_includes/push_swap_bonus.h"
 
 static int	*atoi_to_all(int argc, char **argv)
 {
@@ -64,8 +64,6 @@ void	filling_stack(t_two_stacks *stacks, int argc, char **argv)
 	size = argc - 1;
 	if (!are_unique(size, nums))
 		fail_exit(stacks);
-	if (is_sorted(size, nums))
-		success_exit(stacks);
 	stacks->arr_size = size;
 	--size;
 	while (size >= 0)
@@ -73,7 +71,5 @@ void	filling_stack(t_two_stacks *stacks, int argc, char **argv)
 		push_value(stacks->a, nums[size]);
 		--size;
 	}
-	stacks->sorted_array = nums;
-	quick_sort(stacks->sorted_array, 0, stacks->arr_size - 1);
-	fill_order(stacks);
+	free(nums);
 }

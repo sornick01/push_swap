@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   reverse_rotate.c                                   :+:      :+:    :+:   */
+/*   reverse_rotate_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/07 17:26:29 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/29 19:04:41 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:11:07 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/stack.h"
+#include "../bonus_includes/stack_bonus.h"
 
 static void	reverse_rotate(t_stack *stack)
 {
@@ -30,7 +30,6 @@ void	reverse_rotate_a(t_two_stacks *stacks)
 	if (stacks->a->top && stacks->a->top->next)
 	{
 		reverse_rotate(stacks->a);
-		ft_putendl_fd("rra", 1);
 	}
 }
 
@@ -39,7 +38,6 @@ void	reverse_rotate_b(t_two_stacks *stacks)
 	if (stacks->b->top && stacks->b->top->next)
 	{
 		reverse_rotate(stacks->b);
-		ft_putendl_fd("rrb", 1);
 	}
 }
 
@@ -55,6 +53,5 @@ void	reverse_rotate_a_b(t_two_stacks *stacks)
 		{
 			reverse_rotate(stacks->b);
 		}
-		ft_putendl_fd("rrr", 1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 21:28:52 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/28 21:28:53 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:01:50 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	maximum(t_stack *stack)
 
 void	big_sort(t_two_stacks *stacks, int var)
 {
-	int counter;
+	int	counter;
 
 	counter = 0;
 	while (stacks->a->top)
@@ -75,8 +75,8 @@ void	big_sort(t_two_stacks *stacks, int var)
 
 void	big_sort_back(t_two_stacks *stacks)
 {
-	int max;
-	int check;
+	int	max;
+	int	check;
 
 	while (stacks->b->stack_size)
 	{
@@ -87,7 +87,7 @@ void	big_sort_back(t_two_stacks *stacks)
 			if (!check)
 				rotate_b(stacks);
 			else
-			reverse_rotate_b(stacks);
+				reverse_rotate_b(stacks);
 		}
 		push_a(stacks);
 	}

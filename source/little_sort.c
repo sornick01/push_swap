@@ -6,7 +6,7 @@
 /*   By: mpeanuts <mpeanuts@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 21:28:16 by mpeanuts          #+#    #+#             */
-/*   Updated: 2022/03/28 21:28:17 by mpeanuts         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:03:28 by mpeanuts         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	sort_three(t_two_stacks *stack)
 	a = stack->a->top->data;
 	b = stack->a->top->next->data;
 	c = stack->a->top->next->next->data;
-
 	if (a > b && c > b && c > a)
 		swap_a(stack);
 	else if (a > b && a > c && b > c)
