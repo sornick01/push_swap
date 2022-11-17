@@ -72,7 +72,7 @@ void	rotate_a(t_two_stacks *stacks)
 
 void	rotate_b(t_two_stacks *stacks)
 {
-	if (stacks->b->top && stacks->b->top->next > 0)
+	if (stacks->b->top && stacks->b->top->next != 0)
 	{
 		rotate(stacks->b);
 		ft_putendl_fd("rb", 1);
